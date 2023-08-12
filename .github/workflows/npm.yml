@@ -49,7 +49,7 @@ jobs:
       - name: "Commit files"
         if: ${{ steps.has-changes.outputs.stdout }}
         env:
-          GH_TOKEN: ${{ secrets.BOT_TOKEN }}
+          GH_TOKEN: $BOT_TOKEN
         run: |
           gh pr checkout ${{ github.event.pull_request.number }}
           git commit -S -m "build action" -a
