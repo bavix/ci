@@ -9,6 +9,9 @@ jobs:
 
     env:
       NODE_ENV: production
+      GPG_BOT: ${{ secrets.GPG_BOT }}
+      GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+      BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
 
     steps:
       - uses: actions/checkout@v3
