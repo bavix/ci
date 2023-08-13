@@ -6,6 +6,15 @@ on:
       nodejs:
         type: string
         default: '20.x'
+    secrets:
+      GPG_BOT:
+        required: true
+      GPG_PASSPHRASE:
+        required: true
+      GPG_FINGERPRINT:
+        required: true
+      BOT_TOKEN:
+        required: true
 
 jobs:
   build-ui:
