@@ -8,16 +8,16 @@ on:
         default: '20.x'
       bot_token:
         type: string
-        default: ${{ secrets.BOT_TOKEN }}
+        required: true
       gpg_key:
         type: string
-        default: ${{ secrets.GPG_BOT }}
+        required: true
       gpg_passphrase:
         type: string
-        default: ${{ secrets.GPG_PASSPHRASE }}
+        required: true
       gpg_fingerprint:
         type: string
-        default: ${{ secrets.GPG_FINGERPRINT }}
+        required: true
 
 jobs:
   build-ui:
