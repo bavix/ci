@@ -2,6 +2,22 @@ name: build npm
 
 on:
   workflow_call:
+    inputs:
+      nodejs:
+        type: string
+        default: '20.x'
+      bot_token:
+        type: string
+        default: ${{ secrets.BOT_TOKEN }}
+      gpg_key:
+        type: string
+        default: ${{ secrets.GPG_BOT }}
+      gpg_passphrase:
+        type: string
+        default: ${{ secrets.GPG_PASSPHRASE }}
+      gpg_fingerprint:
+        type: string
+        default: ${{ secrets.GPG_FINGERPRINT }}
 
 jobs:
   build-ui:
@@ -13,10 +29,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup Node 20.x
+      - name: Setup Node ${{ inputs.nodejs }}
         uses: actions/setup-node@v3
         with:
-          node-version: 20.x
+          node-version: ${{ inputs.nodejs }}
           cache: npm
 
       - name: "install"
@@ -37,9 +53,9 @@ jobs:
         if: ${{ steps.has-changes.outputs.stdout }}
         uses: crazy-max/ghaction-import-gpg@v5
         with:
-          gpg_private_key: ${{ secrets.GPG_BOT }}
-          passphrase: ${{ secrets.GPG_PASSPHRASE }}
-          fingerprint: "68C0468E53A658D24C0C1B612DD506482092C18E"
+          gpg_private_key: ${{ inputs.gpg_key }}
+          passphrase: ${{ inputs.gpg_passphrase }}
+          fingerprint: ${{ inputs.gpg_fingerprint }}
           git_config_global: true
           git_user_signingkey: true
           git_commit_gpgsign: true
@@ -49,7 +65,7 @@ jobs:
       - name: "Commit files"
         if: ${{ steps.has-changes.outputs.stdout }}
         env:
-          GH_TOKEN: ${{ secrets.BOT_TOKEN }}
+          GH_TOKEN: ${{ inputs.bot_token }}
         run: |
           gh pr checkout ${{ github.event.pull_request.number }}
           git commit -S -m "build action" -a
@@ -57,5 +73,5 @@ jobs:
       - name: "Push changes"
         if: ${{ steps.has-changes.outputs.stdout }}
         env:
-          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+          GITHUB_TOKEN: ${{ inputs.bot_token }}
         run: git push -u origin HEAD
