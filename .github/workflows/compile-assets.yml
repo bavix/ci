@@ -1,4 +1,4 @@
-name: build npm
+name: compile assets
 
 on:
   workflow_call:
@@ -17,7 +17,7 @@ on:
         required: true
 
 jobs:
-  build-ui:
+  compile:
     runs-on: ubuntu-latest
 
     env:
