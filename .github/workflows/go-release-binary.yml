@@ -2,9 +2,6 @@ name: go release binary
 
 on:
   workflow_call:
-    #secrets:
-    #  GH_TOKEN:
-    #    required: true
 
 jobs:
   releases-matrix:
