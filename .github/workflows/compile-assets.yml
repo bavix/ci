@@ -6,14 +6,18 @@ on:
       nodejs:
         type: string
         default: '20.x'
-    secrets:
+    secrets: 
       GPG_BOT:
+        required: true
         description: bot gpg token
       GPG_PASSPHRASE:
+        required: true
         description: bot gpg passphrase
       GPG_FINGERPRINT:
+        required: true
         description: bot gpg fingerprint
       BOT_TOKEN:
+        required: true
         description: bot token
 
 jobs:
