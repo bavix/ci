@@ -8,7 +8,7 @@ jobs:
     name: Check semgrep
     runs-on: ubuntu-latest
     container:
-      image: bavix/gemgrep:master
+      image: bavix/semgrep:master
     steps:
       - uses: actions/checkout@v3
       - name: "Run semgrep"
