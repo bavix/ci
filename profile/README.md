@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-Hello everybody. We try to actively support our projects. New ideas and new contributors are always welcome.
+We try to actively support our projects. New ideas and new contributors are always welcome.
 
 <!--
 
