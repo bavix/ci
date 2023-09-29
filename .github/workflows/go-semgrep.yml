@@ -12,4 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: "Run semgrep"
-        run: semgrep ci --config=p/golang -f /semgrep-go
+        run: semgrep scan --error --config=p/golang -f /semgrep-go
