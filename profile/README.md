@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-The repository contains Github Actions for internal needs.
+Hello everybody. We try to actively support our projects. New ideas and new contributors are always welcome.
 
 <!--
 
