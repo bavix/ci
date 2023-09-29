@@ -1,0 +1,15 @@
+name: php semgrep
+
+on:
+  workflow_call:
+
+jobs:
+  semgrep:
+    name: Check semgrep
+    runs-on: ubuntu-latest
+    container:
+      image: bavix/semgrep:master
+    steps:
+      - uses: actions/checkout@v4
+      - name: "Run semgrep"
+        run: semgrep scan --error --config=p/php
