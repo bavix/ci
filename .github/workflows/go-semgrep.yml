@@ -10,6 +10,6 @@ jobs:
     container:
       image: bavix/semgrep:master
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: "Run semgrep"
         run: semgrep ci --config=p/golang -f /semgrep-go
