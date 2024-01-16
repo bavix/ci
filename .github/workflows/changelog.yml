@@ -4,7 +4,7 @@ on:
   workflow_call:
 
 jobs:
-  update:
+  changelog:
     runs-on: ubuntu-latest
 
     steps:
