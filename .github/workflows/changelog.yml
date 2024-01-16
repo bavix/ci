@@ -40,7 +40,7 @@ jobs:
           git_committer_email: bot@babichev.net
 
       - name: Check if branch and release match
-        if: ${{ github.event.release.target_commitish != 'main' && github.event.release.target_commitish != 'master' }}
+        if: ${{ github.event.release.target_commitish != 'main' && github.event.release.target_commitish != 'master' && github.event.release.target_commitish != 'latest' }}
         id: guard
         run: |
           NUMERIC_VERSION="${RELEASE_TAG_NAME#v}"
