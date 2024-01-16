@@ -64,6 +64,7 @@ jobs:
           latest-version: ${{ github.event.release.tag_name }}
           compare-url-target-revision: ${{ github.event.release.target_commitish }}
           parse-github-usernames: true
+          path-to-changelog: changelog.md
 
       - name: Commit updated changelog.md
         uses: stefanzweifel/git-auto-commit-action@v5
