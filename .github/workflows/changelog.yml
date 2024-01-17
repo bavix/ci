@@ -63,7 +63,7 @@ jobs:
           git_committer_email: bot@babichev.net
 
       - name: Check if branch and release match
-        if: ${{ github.event.release.target_commitish != 'main' && github.event.release.target_commitish != 'master' && github.event.release.target_commitish != 'latest' }}
+        if: ${{ steps.check_files.outputs.files_exists == 'true' && github.event.release.target_commitish != 'main' && github.event.release.target_commitish != 'master' && github.event.release.target_commitish != 'latest' }}
         id: guard
         run: |
           NUMERIC_VERSION="${RELEASE_TAG_NAME#v}"
@@ -86,7 +86,7 @@ jobs:
           RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
 
       - name: Fail if branch and release tag do not match
-        if: ${{ steps.guard.outputs.VERSION_MISMATCH == 'true' }}
+        if: ${{ steps.check_files.outputs.files_exists == 'true' && steps.guard.outputs.VERSION_MISMATCH == 'true' }}
         uses: actions/github-script@v7
         with:
           script: |
@@ -94,6 +94,7 @@ jobs:
 
       - name: Extract release date from git tag
         id: release_date
+        if: steps.check_files.outputs.files_exists == 'true'
         run: |
           # Get UNIX timestamp from git-tag
           TIMESTAMP_OF_RELEASE_COMMIT=$(git log -1 --date=unix --format=%ad '${{ github.event.release.tag_name }}');
@@ -106,6 +107,7 @@ jobs:
 
       - name: Update changelog.md
         uses: stefanzweifel/changelog-updater-action@v1
+        if: steps.check_files.outputs.files_exists == 'true'
         with:
           release-date: ${{ steps.release_date.outputs.date }}
           release-notes: ${{ github.event.release.body }}
