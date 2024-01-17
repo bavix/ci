@@ -27,6 +27,29 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.release.target_commitish }}
 
+      - name: Check file existence
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "changelog.md"
+
+      - uses: actions/setup-go@v5
+        id: artifacts-golang
+        if: steps.check_files.outputs.files_exists != 'true'
+        with:
+          go-version: '>=1.21.0'
+
+      - name: Install first-changelog
+        id: artifacts-tools-install
+        if: steps.check_files.outputs.files_exists != 'true'
+        run: go install github.com/bavix/first-changelog@latest
+
+      - name: Init changelog
+        id: artifacts-display-all
+        if: steps.check_files.outputs.files_exists != 'true'
+        run: |
+          ~/go/bin/first-changelog "${{ github.repository }}" > changelog.md
+
       - name: Import GPG key
         uses: crazy-max/ghaction-import-gpg@v6
         with:
