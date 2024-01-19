@@ -37,7 +37,6 @@ jobs:
 
       - uses: actions/setup-go@v5
         id: artifacts-golang
-        if: steps.check_files.outputs.files_exists != 'true'
         with:
           go-version: '>=1.21.0'
 
