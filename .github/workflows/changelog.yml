@@ -46,11 +46,17 @@ jobs:
         if: steps.check_files.outputs.files_exists != 'true'
         run: go install github.com/bavix/first-changelog@latest
 
+      - name: Install ghmd
+        run: go install github.com/bavix/ghmd@latest
+
       - name: Init changelog
         id: artifacts-display-all
         if: steps.check_files.outputs.files_exists != 'true'
         run: |
           ~/go/bin/first-changelog "${{ github.repository }}" > changelog.md
+
+      - name: Fix changelog
+        run: cat changelog.md | ~/go/bin/ghmd | tee changelog.md
 
       - name: Import GPG key
         uses: crazy-max/ghaction-import-gpg@v6
