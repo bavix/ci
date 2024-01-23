@@ -70,7 +70,7 @@ jobs:
           git_committer_email: bot@babichev.net
 
       - name: Check if branch and release match
-        if: ${{ steps.check_files.outputs.files_exists == 'true' && github.event.release.target_commitish != 'main' && github.event.release.target_commitish != 'master' && github.event.release.target_commitish != 'latest' }}
+        if: ${{ steps.check_files.outputs.files_exists == 'true' }}
         id: guard
         run: |
           NUMERIC_VERSION="${RELEASE_TAG_NAME#v}"
