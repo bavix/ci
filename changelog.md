@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.2 - 2024-01-29
+
+### What's Changed
+
+* Bump wangyoucao577/go-release-action from 1.42 to 1.43 by [@dependabot](https://github.com/dependabot) in https://github.com/bavix/.github/pull/11
+* Bump andstor/file-existence-action from 2 to 3 by [@dependabot](https://github.com/dependabot) in https://github.com/bavix/.github/pull/12
+* Bump wangyoucao577/go-release-action from 1.43 to 1.46 by [@dependabot](https://github.com/dependabot) in https://github.com/bavix/.github/pull/13
+
+**Full Changelog**: https://github.com/bavix/.github/compare/0.2.1...0.2.2
+
 ## 0.2.1 - 2024-01-24
 
 **Full Changelog**: https://github.com/bavix/.github/compare/0.2.0...0.2.1
