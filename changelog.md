@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.3 - 2024-02-10
+
+### What's Changed
+
+* Bump wangyoucao577/go-release-action from 1.46 to 1.47 by [@dependabot](https://github.com/dependabot) in https://github.com/bavix/.github/pull/14
+
+**Full Changelog**: https://github.com/bavix/.github/compare/0.2.2...0.2.3
+
 ## 0.2.2 - 2024-01-29
 
 ### What's Changed
