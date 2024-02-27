@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.4 - 2024-02-26
+
+### What's Changed
+
+* Bump wangyoucao577/go-release-action from 1.47 to 1.48 by [@dependabot](https://github.com/dependabot) in https://github.com/bavix/.github/pull/15
+* Configure Mend Bolt for GitHub by [@mend-bolt-for-github](https://github.com/mend-bolt-for-github) in https://github.com/bavix/.github/pull/16
+* Bump wangyoucao577/go-release-action from 1.48 to 1.49 by [@dependabot](https://github.com/dependabot) in https://github.com/bavix/.github/pull/17
+
+### New Contributors
+
+* [@mend-bolt-for-github](https://github.com/mend-bolt-for-github) made their first contribution in https://github.com/bavix/.github/pull/16
+
+**Full Changelog**: https://github.com/bavix/.github/compare/0.2.3...0.2.4
+
 ## 0.2.3 - 2024-02-10
 
 ### What's Changed
