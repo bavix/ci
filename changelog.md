@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.5 - 2024-03-23
+
+**Full Changelog**: https://github.com/bavix/.github/compare/0.2.4...0.2.5
+
 ## 0.2.4 - 2024-02-26
 
 ### What's Changed
