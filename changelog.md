@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0 - 2024-06-17
+
+### What's Changed
+
+* Bump wangyoucao577/go-release-action from 1.49 to 1.50 by [@dependabot](https://github.com/dependabot) in https://github.com/bavix/.github/pull/18
+* Bump wangyoucao577/go-release-action from 1.50 to 1.51 by [@dependabot](https://github.com/dependabot) in https://github.com/bavix/.github/pull/19
+
+**Full Changelog**: https://github.com/bavix/.github/compare/0.2.5...0.3.0
+
 ## 0.2.5 - 2024-03-23
 
 **Full Changelog**: https://github.com/bavix/.github/compare/0.2.4...0.2.5
