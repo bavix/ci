@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.1 - 2024-07-26
+
+### What's Changed
+
+* Add support executable_compression by [@rez1dent3](https://github.com/rez1dent3) in https://github.com/bavix/.github/pull/20
+
+**Full Changelog**: https://github.com/bavix/.github/compare/0.3.0...0.3.1
+
 ## 0.3.0 - 2024-06-17
 
 ### What's Changed
