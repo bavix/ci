@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.2 - 2024-07-27
+
+### What's Changed
+
+* NODE_ENV=production by [@rez1dent3](https://github.com/rez1dent3) in https://github.com/bavix/.github/pull/21
+
+**Full Changelog**: https://github.com/bavix/.github/compare/0.3.1...0.3.2
+
 ## 0.3.1 - 2024-07-26
 
 ### What's Changed
