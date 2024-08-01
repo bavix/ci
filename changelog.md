@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.3 - 2024-08-01
+
+### What's Changed
+
+* Create lock.yml by [@rez1dent3](https://github.com/rez1dent3) in https://github.com/bavix/.github/pull/22
+
+**Full Changelog**: https://github.com/bavix/.github/compare/0.3.2...0.3.3
+
 ## 0.3.2 - 2024-07-27
 
 ### What's Changed
